@@ -19,7 +19,7 @@ function getHumanChoice() {
         if (choice == `scissors` || choice == `rock` || choice == `paper`) {
             return choice;
         } else {
-            alert(`You wrote it wrong!`);
+            return(`You wrote it wrong!`);
         }
 }
 
@@ -27,3 +27,36 @@ function getHumanChoice() {
 
 let humanScore = 0;
 let computerScore = 0;
+
+let humanChoice = getHumanChoice;
+let computerChoice = getComputerChoice;
+
+//Task 4
+
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice === computerChoice) {
+        return `tie`;
+    }
+    switch(humanChoice){
+        case 'rock':
+            if (computerChoice === 'scissors') {
+                return 'You win! Rock beats Scissors.';
+            } else {
+                return 'You lose! Paper beats Rock.';
+            }
+        case 'paper':
+            if (computerChoice === 'rock') {
+                return 'You win! Paper beats Rock.';
+            } else {
+                return 'You lose! Scissors beats Paper.';
+            }
+        case 'scissors':
+            if (computerChoice === 'paper') {
+                return 'You win! Scissors beats Paper.';
+            } else {
+                return 'You lose! Rock beats Scissors.';
+            }
+        default:
+            return 'Invalid choice!';
+    }
+}
