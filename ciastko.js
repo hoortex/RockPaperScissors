@@ -9,6 +9,25 @@ function getComputerChoice() {
     }
 }
 
+const rockBTN = document.getElementById("rock");
+const paperBTN = document.getElementById("paper");
+const scissorsBTN = document.getElementById("scissors");
+
+rockBTN.addEventListener("click", () => {
+    const computerChoice = getComputerChoice();
+    playRound("rock", computerChoice);
+});
+
+paperBTN.addEventListener("click", () => {
+    const computerChoice = getComputerChoice();
+    playRound("paper", computerChoice);
+});
+
+scissorsBTN.addEventListener("click", () => {
+    const computerChoice = getComputerChoice();
+    playRound("scissors", computerChoice);
+});
+
 function getHumanChoice() {
     while (true) {
         const choice = prompt(`Make a choice between "Rock", "Paper", "Scissors".`);
@@ -88,5 +107,3 @@ function playGame() {
         console.log("It's a tie overall!");
     }
 }
-
-playGame();
